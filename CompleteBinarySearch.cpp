@@ -13,48 +13,17 @@ int main(){
 	int search[size];
 
 	for(i=0; i<size; i++){
-		cout<<"Enter a number:";
+		cout<<i+1<<".Enter a number :";
 		cin>>search[i];
 	}
-
-    int k,ptr,temp;
-    int sorted[size];
     for(i=0; i<size; i++){
+            if(search[i] > search[i+1]){
+            cout<<"Array not sorted as ascending order"<<endl;
+            cout<<"\t<< Please enter numbers again >>"<<endl;
+		}
+    }
+    cout<<"\tArray sorted as ascending order"<<endl;
 
-        sorted[i]=search[i];
-        //cout<<"Sorted = "<<sorted[i]<<endl;
-	}
-
-    for(k=1; k<size; k++)
-         {
-           for(ptr=0; ptr<size-k; ptr++ )
-
-               {
-                   if (sorted[ptr]>sorted[ptr+1])
-
-                       {
-                           temp=sorted[ptr];
-                           sorted[ptr]=sorted[ptr+1];
-                           sorted[ptr+1]=temp;
-
-                       }
-               }
-
-
-         }
-    int count=0;
-	for(i=0; i<size; i++){
-
-            if(sorted[i]==search[i]){
-                count++;
-            }
-
-
-        //cout<<"after sort"<<endl;
-        //cout<<"Sorted = "<<sorted[i]<<endl;
-	}
-	if(count==size) cout<<"Array sorted as ascending order"<<endl;
-	else cout<<"Array not sorted as ascending order"<<endl;
 	/*int item,beg,end,mid;
 	cout<<"Enter a search item:";
 	cin>>item;

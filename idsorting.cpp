@@ -1,78 +1,68 @@
+//23-01-2020
+//MsM Robin
+//CSE1901016113
+//Sonargaon University
+
 #include<iostream>
 #include<string.h>
 #include <sstream>
-#include <cstdlib>
 using namespace std;
 
-int main(){
-	
-	int size,i,temp,ptr;
-	
-	cout<<"How many student's ID do u want to enter?";
-	cin>>size;
-	
-	string id[size];
-	string newID[size];
-	int intID[size];
-	for(i=0; i<size; i++){
-		cout<<"Enter "<<i+1<<" number student's id: ";
-		cin>>id[i];
-	}
-	
-	for(i=0; i<size; i++){
-		
-		newID[i]=id[i].substr(3,12);
-		//cout<<newID[i]<<endl;
-		
-		stringstream cnvrt(newID[i]);
-		
-		cnvrt>>intID[i];
-		
-	}
-	//int sum[size];
-	BubbleSort(intID, size);
-	cout<< "Array after bubble short:"<<endl;
-         for(i=0;i<size;i++)
-         {
-             cout<<intID[i]<<endl;
+int main()
+{
+
+    int size,i,temp,ptr;
+    int digit,cha;
+
+    cout<<"How many student's ID do u want to enter? ::";
+    cin>>size;
+    cout<<"\tHow many Character do u have in your ID? ::";
+    cin>>cha;
+    cout<<"\tHow many Digit do u have in your ID? ::";
+    cin>>digit;
+
+    string id[size],str;
+    string newID[size];
+    int intID[size];
+
+    for(i=0; i<size; i++)
+    {
+        cout<<i+1<<"..Enter student's id :";
+        cin>>id[i];
+    }
+
+//<<This part is about cutting string for convert into integer>>
+
+    for(i=0; i<size; i++)
+    {
+
+        newID[i]=id[i].substr(cha,digit);
+        str=id[i].substr(0,cha);
+        stringstream cnvrt(newID[i]);
+
+        cnvrt>>intID[i];
+
+    }
+//<<integer value sorting Part>>
+
+    cout<< "\tAfter  sorting all those id:\t\n"<<endl;
+    for(i=1; i<size; i++)
+    {
+        for(ptr=0; ptr<size-i; ptr++ )
+        {
+            if (intID[ptr]>intID[ptr+1])
+            {
+                temp=intID[ptr];
+                intID[ptr]=intID[ptr+1];
+                intID[ptr+1]=temp;
+            }
         }
-      cout<<"\tafter merge\n";  
-        for(i=0; i<size; i++){
-        	stringstream merge;
-	
-	string str[size];
-	//int count;
-	
-	merge<<"CSE";
-	merge<<intID[i];
-	str[i]=merge.str();
-	
-	cout<<str[i]<<endl;
-		}
-		
-		
-	return 0;
+    }
+    //<String Merging part>
+    for(i=0; i<size; i++)
+    {
+        cout<<str<<intID[i]<<endl;
+    }
+    return 0;
 }
 
-
-void BubbleSort (int data[], int n)
-{
-	int k,ptr,temp;
-	for(k=1;k<n;k++)
-         {
-           for(ptr=0;ptr<n-k;ptr++ )
-
-               {
-                   if (data[ptr]>data[ptr+1])
-
-                       {
-                           temp=data[ptr];
-                           data[ptr]=data[ptr+1];
-                           data[ptr+1]=temp;
-
-                       }
-               }
-
-
-         }
-}	

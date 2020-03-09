@@ -7,13 +7,13 @@ int main(){
 	
 	stringstream merge;
 	
-	string str[4];
+	string str;
 	//int count;
 	
 	merge<<"CSE";
 	merge<<"msmrobin";
-	str[i]=merge.str();
+	str=merge.str();
 	
-	cout<<str[i]<<endl;
+	cout<<str<<endl;
 	return 0;
 }

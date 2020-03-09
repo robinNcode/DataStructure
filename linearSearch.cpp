@@ -9,26 +9,30 @@ int main()
     cin>>siz;
 
     int demo[siz];
-
+    cout<<"Enter array Values :";
     for(i=0; i<siz; i++){
-    cout<<i+1<<". Enter Value :";
+
     cin>>demo[i];
     }
-    int value,test=0,vul=0;
-    cout<<"Enter a Value for search :";
-    cin>>value;
+    /*for(i=0; i<siz; i++){
 
+    cout<<demo[i]<<endl;
+    }*/
+    int value,test=0,vul=0;
+    cout<<"Enter array Values for search :";
+    cin>>value;
     for(i=0; i<siz; i++){
         if(value==demo[i]){
-            test=1;
-            break;
+
+        test++;
         }
         //else vul++;
     }
-    if(test==1){
-    cout<<"Search item found"<<endl;
-    }
-    else cout<<"Search item was not founded"<<endl;
+    /*cout<<"Search item found "<<test<<" times.."<<endl;
+
+    if(vul==vul){
+    cout<<"Search item not found .."<<endl;
+    }*/
 
     return 0;
 }

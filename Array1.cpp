@@ -1,4 +1,4 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 int main()
 {
@@ -7,9 +7,11 @@ int main()
     cin>>n;
     int demo[n];
     cout<<"plz input the all value:\n";
+    //srand((unsigned)time(0));
     for (int i=0; i<n; i++)
     {
-        cin>>demo[i];
+        //cout<<"Enter a value : ";
+        demo[i]= (rand()%100)+1;
     }
 
     cout<<"\t:::your output is:::"<<endl;

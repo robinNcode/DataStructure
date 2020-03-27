@@ -8,18 +8,18 @@ int main(){
 
    int arr[siz],temp;
     for (i=0; i<siz; i++){
-        cout<<"Enter array elements :=> ";
-        cin>>arr[i];
+        //cout<<"Enter array elements :=> ";
+        arr[i] = (rand()%100)+1;
    }
    for (i=siz-1; i>=0; i--){
         arr[i+1]=arr[i];
 
    }
       arr[0]=0;
-      /*cout<<"\t\t << Array before INSERTION Sort >>\n";
+      cout<<"\t\t << Array before INSERTION Sort >>\n";
       for (i=0; i<=siz; i++){
             cout<<arr[i]<<endl;
-   }*/
+   }
 
    for (int pass=2; pass<=siz; pass++){
          temp=arr[pass];

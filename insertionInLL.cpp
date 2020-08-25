@@ -25,11 +25,15 @@ int main(){
     cin>>test;
 
     for(i=0; i<test; i++){
-        nod->link =new node();
+        nod->link = new node();
         cout<<"Enter element number "<<i+1<<":";
         cin>>nod->info;
         nod=nod->link;
     }
+    for (i=0; i<4; i++){
+
+    }
+
     nod=&start;
    cout<<"<<< item in the linked list >>>"<<endl;
    print(nod);
@@ -37,7 +41,7 @@ int main(){
    nod=&start;
    string item;
    int count=1;
-         cout<<"\n\tNow,do u wanna search an element ?:\n then enter an element :";
+         /*cout<<"\n\tNow,do u wanna search an element ?:\n then enter an element :";
          cin>>item;
 
          while(nod->link != NULL){
@@ -47,7 +51,7 @@ int main(){
                      }
          if(count <= test) cout<<"Searched item is at node =>"<<count<<endl;
          else cout<<"Your item is not in the list\n";
-
+         */
    return 0;
 
 }

@@ -74,3 +74,17 @@ cout<<str[i]<<endl;
 
 return 0;
 }
+/*#include<iostream>
+#include<algorithm>
+using namespace std;
+int main(){
+    int siz;
+    cin>>siz;
+
+    string str[siz];
+    for(int i=0; i<siz; i++)cin>>str[i];
+     sort(str,str+siz);
+     for(int i=0; i<siz; i++)cout<<str[i]<<endl;
+
+	return 0;
+}*/

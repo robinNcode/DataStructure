@@ -34,7 +34,7 @@ int main()
       //<<< Ascending Order Searching >>>
       else  if (ascount1 == size-1 ){
 
-            cout<<"\t <<< Array sorted as ascending order >>>"<<endl;
+    cout<<"\t <<< Array sorted as ascending order >>>"<<endl;
     int item,beg,end,mid;
     cout<<"Enter a search item:";
     cin>>item;

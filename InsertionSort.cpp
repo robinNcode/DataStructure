@@ -9,7 +9,7 @@ int main(){
    int arr[siz],temp;
     for (i=0; i<siz; i++){
         //cout<<"Enter array elements :=> ";
-        arr[i] = (rand()%100)+1;
+        arr[i] = (rand()%100)+1;  //to get random integer value for instant..
    }
    for (i=siz-1; i>=0; i--){
         arr[i+1]=arr[i];

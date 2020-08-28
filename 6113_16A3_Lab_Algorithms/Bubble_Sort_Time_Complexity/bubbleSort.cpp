@@ -10,7 +10,7 @@
 #include<stdlib.h>
 #define clockPerSec 1000
 using namespace std;
-long numbers[50000];
+long numbers[400000];
 
 // Swap two elements - Utility function
 void swap(long* a, long* b) {
@@ -55,10 +55,10 @@ int main(int argc, char ** argv){
 
     FILE *inputFile, *outputFile; //File operation starts here
 
-    inputFile = fopen("inputData.txt","r");
-    outputFile = fopen("outputData.txt","a");
+    inputFile = fopen("../inputData.txt","r");
+    outputFile = fopen("outputData.txt","w");
     fscanf(inputFile,"%d",&amount);
-
+    cout<<amount<<endl;
     cout<<"\n\t<<< Reading data from File ..... "<<endl;
     for (i=0; i<amount; i++){
         fscanf(inputFile,"%d",&numbers[i]);
@@ -74,7 +74,7 @@ int main(int argc, char ** argv){
     cout<<"\t<<< Sorting Complete ...!!!\n\n";
     cout<<"\t<<< Number of Data : "<<amount<<" Time needed for sorting :  "<<finish<<endl;
 
-    cout<<"\n\n\t<<< This information is printed to file named 'outData.txt' \n"<<endl;
+    cout<<"\n\n\t<<< This information is printed to file named 'outputData.txt' \n"<<endl;
 	fprintf(outputFile,"Data = %d , Time = %lf",amount,finish);
 	fprintf(outputFile,"\n\n\t<<< Sorted Data :\n");
 

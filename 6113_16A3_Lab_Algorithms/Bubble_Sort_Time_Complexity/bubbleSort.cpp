@@ -1,8 +1,8 @@
 /*
   *MD Shahin Mia Robin
   *CSE1901016113
-  *16A3
-  *Quick Sort Time Complexity
+  *Date : 29-08-20
+  *Bubble Sort Time Complexity
   */
 #include<iostream>
 #include<stdio.h>
@@ -12,73 +12,55 @@
 using namespace std;
 long numbers[400000];
 
-// Swap two elements - Utility function
-void swap(long* a, long* b) {
-    long t = *a;
-    *a = *b;
-    *b = t;
-}
-// partition the array using last element as pivot
-long partition (long arr[], long low, long high) {
-    long pivot = arr[high];    // pivot
-    long i = (low - 1);
+// Bubble Sort Algorithm starts here ......
+void bubbleSort(long data[],long ammount){
+    long k,ptr,temp;
 
-    for (long j = low; j <= high- 1; j++) {
-        //if current element is smaller than pivot, increment the low element
-        //swap elements at i and j
-        if (arr[j] <= pivot) {
-            i++;    // increment index of smaller element
-            swap(&arr[i], &arr[j]);
-        }
-    }
-    swap(&arr[i + 1], &arr[high]);
-    return (i + 1);
-}
-//quicksort algorithm
-void quickSort(long arr[], long low, long high) {
-    if (low < high) {
-        //partition the array
-        long pivot = partition(arr, low, high);
-        //sort the sub arrays independently
-        quickSort(arr, low, pivot - 1);
-        quickSort(arr, pivot + 1, high);
-    }
+    for(k=1;k<ammount;k++){
+           for(ptr=0;ptr<ammount-k;ptr++ ){
+                   if (data[ptr]>data[ptr+1]){
+                           temp=data[ptr];
+                           data[ptr]=data[ptr+1];
+                           data[ptr+1]=temp;
+                       }
+               }
+         }
 }
         //main function starts here ...............
 int main(int argc, char ** argv){
 
-    cout<<"\t\t ++++ Quick Sort Time Complexity Assignment ++++\n";
+    cout<<"\t\t ++++ Bubble Sort Time Complexity Assignment ++++\n";
     cout<<"\t\t **** MD Shahin Mia Robin ****\n ";
-    long amount,i,j,save;
+    long ammount,i,j,save;
     double finish;
     clock_t start;
 
     FILE *inputFile, *outputFile; //File operation starts here
 
     inputFile = fopen("../inputData.txt","r");
-    outputFile = fopen("outputData.txt","w");
-    fscanf(inputFile,"%d",&amount);
-    cout<<amount<<endl;
+    outputFile = fopen("outputBubbleSort.txt","w");
+    fscanf(inputFile,"%d",&ammount);
+
     cout<<"\n\t<<< Reading data from File ..... "<<endl;
-    for (i=0; i<amount; i++){
+    for (i=0; i<ammount; i++){
         fscanf(inputFile,"%d",&numbers[i]);
     }
     cout<<"\t<<< Data reading complete !!!\n";
-    cout<<"\t<<< Quick Sort process started,Please Wait...\n";
+    cout<<"\t<<< Bubble Sort process started,Please Wait...\n";
 
     start = clock(); //time initialization
-    //Quick Sort function calling here..
-    quickSort(numbers, 0, amount-1);
+    //Bubble Sort function calling here..
+    bubbleSort(numbers,ammount);
     finish = ((double)start)/clockPerSec;
 
     cout<<"\t<<< Sorting Complete ...!!!\n\n";
-    cout<<"\t<<< Number of Data : "<<amount<<" Time needed for sorting :  "<<finish<<endl;
+    cout<<"\t<<< Number of Data : "<<ammount<<" Time needed for sorting :  "<<finish<<endl;
 
-    cout<<"\n\n\t<<< This information is printed to file named 'outputData.txt' \n"<<endl;
-	fprintf(outputFile,"Data = %d , Time = %lf",amount,finish);
-	fprintf(outputFile,"\n\n\t<<< Sorted Data :\n");
+    cout<<"\n\n\t<<< This information is printed to file named 'outputBubbleSort.txt' \n"<<endl;
+	fprintf(outputFile,"Data = %d , Time = %lf",ammount,finish);
+	fprintf(outputFile,"\n\n\t<<< Array after Bubble sort :\n");
 
-    for(long i=0; i<amount; i++){
+    for(long i=0; i<ammount; i++){
         fprintf(outputFile,"%d\n",numbers[i]);
     }
 	return 0;

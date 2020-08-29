@@ -1,6 +1,6 @@
-Data = 400000 , Time = 0.136000
+Data = 400000 , Time = 0.103000
 
-	<<< Sorted Data :
+	<<< Bubble Sorted Data :
 -4500
 -4500
 -4500

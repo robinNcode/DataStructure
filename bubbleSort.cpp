@@ -1,4 +1,4 @@
-//Babble short
+//Babble sort
 //20/01/2020
 //robin
 #include<iostream>

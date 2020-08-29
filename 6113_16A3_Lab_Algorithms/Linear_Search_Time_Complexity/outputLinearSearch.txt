@@ -1,0 +1,20 @@
+	<<<: Linear Search Time Complexity :>>>
+
+Value entered for search : -454 
+
+Position of data = 253164 : -454
+Position of data = 255700 : -454
+Position of data = 255988 : -454
+Position of data = 259981 : -454
+Position of data = 261791 : -454
+Position of data = 264011 : -454
+Position of data = 264616 : -454
+Position of data = 265090 : -454
+Position of data = 267283 : -454
+Position of data = 268838 : -454
+Position of data = 274544 : -454
+Position of data = 276153 : -454
+Position of data = 278508 : -454
+Position of data = 278896 : -454
+Position of data = 279727 : -454
+Data found = 15 times, Search Time = 2.716000 sec

@@ -13,11 +13,11 @@ using namespace std;
 long numbers[400000];
 
 // Bubble Sort Algorithm starts here ......
-void bubbleSort(long data[],long ammount){
+void bubbleSort(long data[],long amount){
     long k,ptr,temp;
 
-    for(k=1;k<ammount;k++){
-           for(ptr=0;ptr<ammount-k;ptr++ ){
+    for(k=1;k<amount;k++){
+           for(ptr=0;ptr<amount-k;ptr++ ){
                    if (data[ptr]>data[ptr+1]){
                            temp=data[ptr];
                            data[ptr]=data[ptr+1];
@@ -31,7 +31,7 @@ int main(int argc, char ** argv){
 
     cout<<"\t\t ++++ Bubble Sort Time Complexity Assignment ++++\n";
     cout<<"\t\t **** MD Shahin Mia Robin ****\n ";
-    long ammount,i,j,save;
+    long amount,i,j,save;
     double finish;
     clock_t start;
 
@@ -39,10 +39,10 @@ int main(int argc, char ** argv){
 
     inputFile = fopen("../inputData.txt","r");
     outputFile = fopen("outputBubbleSort.txt","w");
-    fscanf(inputFile,"%d",&ammount);
+    fscanf(inputFile,"%d",&amount);
 
     cout<<"\n\t<<< Reading data from File ..... "<<endl;
-    for (i=0; i<ammount; i++){
+    for (i=0; i<amount; i++){
         fscanf(inputFile,"%d",&numbers[i]);
     }
     cout<<"\t<<< Data reading complete !!!\n";
@@ -50,17 +50,17 @@ int main(int argc, char ** argv){
 
     start = clock(); //time initialization
     //Bubble Sort function calling here..
-    bubbleSort(numbers,ammount);
+    bubbleSort(numbers,amount);
     finish = ((double)start)/clockPerSec;
 
     cout<<"\t<<< Sorting Complete ...!!!\n\n";
-    cout<<"\t<<< Number of Data : "<<ammount<<" Time needed for sorting :  "<<finish<<endl;
+    cout<<"\t<<< Number of Data : "<<amount<<" Time needed for sorting :  "<<finish<<" sec\n";
 
-    cout<<"\n\n\t<<< This information is printed to file named 'outputBubbleSort.txt' \n"<<endl;
-	fprintf(outputFile,"Data = %d , Time = %lf",ammount,finish);
+    cout<<"\n\n\t<<< This informations are printed in file named 'outputBubbleSort.txt' \n"<<endl;
+	fprintf(outputFile,"Data = %d , Time needed = %lf sec\n",amount,finish);
 	fprintf(outputFile,"\n\n\t<<< Array after Bubble sort :\n");
 
-    for(long i=0; i<ammount; i++){
+    for(long i=0; i<amount; i++){
         fprintf(outputFile,"%d\n",numbers[i]);
     }
 	return 0;

@@ -58,7 +58,7 @@ int main(int argc, char ** argv){
     inputFile = fopen("../inputData.txt","r");
     outputFile = fopen("outputData.txt","w");
     fscanf(inputFile,"%d",&amount);
-    cout<<amount<<endl;
+
     cout<<"\n\t<<< Reading data from File ..... "<<endl;
     for (i=0; i<amount; i++){
         fscanf(inputFile,"%d",&numbers[i]);
@@ -72,10 +72,10 @@ int main(int argc, char ** argv){
     finish = ((double)start)/clockPerSec;
 
     cout<<"\t<<< Sorting Complete ...!!!\n\n";
-    cout<<"\t<<< Number of Data : "<<amount<<" Time needed for sorting :  "<<finish<<endl;
+    cout<<"\t<<< Number of Data : "<<amount<<" ,Time needed for sorting :  "<<finish<<" sec\n";
 
-    cout<<"\n\n\t<<< This information is printed to file named 'outputData.txt' \n"<<endl;
-	fprintf(outputFile,"Data = %d , Time = %lf",amount,finish);
+    cout<<"\n\n\t<<< This informations are printed in file named 'outputData.txt' \n"<<endl;
+	fprintf(outputFile,"Data = %d , Time needed = %lf sec\n",amount,finish);
 	fprintf(outputFile,"\n\n\t<<< Sorted Data :\n");
 
     for(long i=0; i<amount; i++){

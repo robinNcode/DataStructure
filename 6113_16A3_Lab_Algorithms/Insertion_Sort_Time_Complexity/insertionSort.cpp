@@ -36,7 +36,7 @@ int main(int argc, char ** argv){
 
     cout<<"\t\t ++++ Insertion Sort Time Complexity Assignment ++++\n";
     cout<<"\t\t **** MD Shahin Mia Robin ****\n ";
-    long ammount,i,j,save;
+    long amount,i,j,save;
     double finish;
     clock_t start;
 
@@ -44,27 +44,27 @@ int main(int argc, char ** argv){
 
     inputFile = fopen("../inputData.txt","r");
     outputFile = fopen("outputInsertionSort.txt","w");
-    fscanf(inputFile,"%d",&ammount);
+    fscanf(inputFile,"%d",&amount);
 
     cout<<"\n\t<<< Reading data from File ..... "<<endl;
-    for (i=0; i<ammount; i++){
+    for (i=0; i<amount; i++){
         fscanf(inputFile,"%d",&numbers[i]);
     }
     cout<<"\t<<< Data reading complete !!!\n";
     cout<<"\t<<< Insertion Sort process started,Please Wait...\n";
 
     start = clock(); //time initialization
-    insertionSort(numbers,ammount); //Insertion Sort function calling here..
+    insertionSort(numbers,amount); //Insertion Sort function calling here..
     finish = ((double)start)/clockPerSec;
 
     cout<<"\t<<< Sorting Complete ...!!!\n\n";
-    cout<<"\t<<< Number of Data : "<<ammount<<" Time needed for sorting :  "<<finish<<endl;
+    cout<<"\t<<< Number of Data : "<<amount<<" Time needed for sorting :  "<<finish<<" sec\n";
 
-    cout<<"\n\n\t<<< This information is printed to file named 'outputinsertionSort.txt' \n"<<endl;
-	fprintf(outputFile,"Data = %d , Time = %lf",ammount,finish);
+    cout<<"\n\n\t<<< This informations are printed in file named 'outputinsertionSort.txt' \n"<<endl;
+	fprintf(outputFile,"Data = %d , Time needed = %lf sec\n",amount,finish);
 	fprintf(outputFile,"\n\n\t<<< Array after Insertion Sort :\n");
 
-    for(long i=0; i<ammount; i++){
+    for(long i=0; i<amount; i++){
         fprintf(outputFile,"%d\n",numbers[i]);
     }
 	return 0;

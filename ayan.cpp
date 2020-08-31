@@ -6,76 +6,82 @@ CSE-1901016054
 #include<string.h>
 using namespace std;
  int main()
- {
+{
+    int size,i;
+    int ascount1=0,ascount2=0;
+    cout<<"How many numbers Do u want to enter :";
+    cin>>size;
 
-     int i,j,n,k,length;
-     cout<<"How many name do u want to enter?:";
-     cin>>n;
-     cout<<"Enter the name length:";
-     cin>>length;
-       char studentName[n][length],temp[10];
-     for(i=0;i<n;i++)
-     {
-         cout<<"enter the Student Name"<<i+1<<":";
-         cin>>studentName[i];
-     }
+    int search[size];
 
-    string value;
-	int beg,end,mid;
-	cout<<"\t\tEnter value for Binary Search:";
-	cin>>value;
+    for(i=0; i<size; i++)
+    {
+        cout<<"Enter a number:";
+        cin>>search[i];
+    }
+  //Checking the array is sorted or not
+    for(i=0; i<size-1; i++)
+    {
+       if(search[i]<=search[i+1])
+        {
+            ascount1++;
+        }
+        else if(search[i]>=search[i+1]){
+            ascount2++;
+        }
+  }
+      if(ascount1 != size-1 && ascount2 != size-1){
+            cout<<" <<Array is not sorted >>";
+      }
+      //<<< Ascending Order Searching >>>
+      else  if (ascount1 == size-1 ){
 
-	beg=0;
-    end=n;
+    cout<<"\t <<< Array sorted as ascending order >>>"<<endl;
+    int item,beg,end,mid;
+    cout<<"Enter a search item:";
+    cin>>item;
+    //<<<Initialization of mid>>>
+    beg=0;
+    end=size;
     mid=(beg+end)/2;
 
-	while (beg<=end && studentName[mid]!=value){
-		if(value<studentName[mid]){
-			end=mid-1;
-		}
-		else beg=mid+1;
+    while (beg<=end && search[mid]!=item){
+    	if(item<search[mid]){
+    		end=mid-1;
+    	}
+    	else beg=mid+1;
+        mid=(beg+end)/2;
+        }
 
-		mid=(beg+end)/2;
-	}
-
-	if(value==studentName[mid]){
-		cout<<"Search value found at position "<<mid+1<<endl;
-	}
-	else cout<<"Search value was not founded !!"<<endl;
-
-    cout<<"\t\tTo insert a data"<<endl;
-    cout<<"\t\tEnter a position:";
-    cin>>k;
-   char data[length];
-
-    cout<<"\t\tEnter a new data:";
-    cin>>data;
-
-    for (j=n-1; j>=k; j--)
-    {
-        strcpy(studentName[j+1],studentName[j]);
+    if(item==search[mid]){
+    	cout<<"Search item found at position "<<mid+1<<" !!"<<endl;
     }
-    cout<<"\t:After adding a new word:\n";
-    strcpy(studentName[k],data);
-    n=n+1;
-    for (i=0; i<n; i++)
-    {
-        cout<<studentName[i]<<endl;
-    }
-    cout<<"\t\tTo delete a data"<<endl;
-    cout<<"\t\tEnter a position number:";
-    cin>>k;
-    for (j=k; j<=n-1; j++)
-    {
-        strcpy(studentName[j],studentName[j+1]);
-    }
-    cout<<"\t:After deleting a new Word:\n";
-
-    n=n-1;
-    for (i=0; i<n; i++)
-    {
-        cout<<studentName[i]<<endl;
+    else cout<<"Searh item was not founded !!"<<endl;
     }
 
+    //<<<Descending Order Searching>>>
+       else if(ascount2==size-1){
+            cout<<"\t <<< Array sorted as descending order >>>"<<endl;
+            int item,beg,end,mid;
+    cout<<"Enter a search item:";
+    cin>>item;
+
+    beg=0;
+    end=size;
+    mid=(beg+end)/2;
+
+    while (beg<=end && search[mid]!=item){
+    	if(item>search[mid]){
+    		beg=mid+1;
+    	}
+    	else end=mid-1;
+    	mid=(beg+end)/2;
+        }
+
+    if(item==search[mid]){
+    	cout<<"Search item found at position "<<mid+1<<" !!"<<endl;
+    }
+    else cout<<"Searh item was not founded !!"<<endl;
+    }
     return 0;
- }
+}

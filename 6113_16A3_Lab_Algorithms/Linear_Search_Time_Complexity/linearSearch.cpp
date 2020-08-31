@@ -39,7 +39,7 @@ int main(int argc, char ** argv){
     fprintf(outputFile,"\t<<<: Linear Search Time Complexity :>>>\n\nValue entered for search : %ld \n\n",value);
 
     start = clock(); //time initialization
-    //Linear Search algorithm starts here.......
+            //Linear Search algorithm starts here.......
     for(ptr=0; ptr<amount; ptr++){
         if(numbers[ptr] == value){
             fprintf(outputFile,"Position of data = %ld : %ld\n",ptr,value); //prints the array index where data is founded

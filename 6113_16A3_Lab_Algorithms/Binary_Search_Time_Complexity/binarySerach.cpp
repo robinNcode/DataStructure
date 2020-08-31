@@ -13,7 +13,7 @@
 using namespace std;
 long numbers[400000];
 
-//Checking array of data is sorted or not
+//Checking the array is sorted or not
 void checkSort(long arr[],long amount){
     long ascount,decount,i;
     for(i=0; i<amount-1; i++){
@@ -28,7 +28,7 @@ void checkSort(long arr[],long amount){
 }
 //Binary Search function starts here....
 long binarySearch(long numbers[],long amount,long value){
-            //this function is only works for ascending order array..
+            //this function is only works for ascending ordered array..
     long beg,end,mid;
     //Initialization of mid
     beg=0;

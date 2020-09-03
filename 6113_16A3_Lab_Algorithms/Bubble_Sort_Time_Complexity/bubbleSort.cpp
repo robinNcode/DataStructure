@@ -54,7 +54,7 @@ int main(int argc, char ** argv){
     finish = ((double)start)/clockPerSec;
 
     cout<<"\t<<< Sorting Complete ...!!!\n\n";
-    cout<<"\t<<< Number of Data : "<<amount<<" Time needed for sorting :  "<<finish<<" sec\n";
+    cout<<"\t<<< Number of Data : "<<amount<<" ,Time needed for sorting :  "<<finish<<" sec\n";
 
     cout<<"\n\n\t<<< This informations are printed in file named 'outputBubbleSort.txt' \n"<<endl;
 	fprintf(outputFile,"Data = %d , Time needed = %lf sec\n",amount,finish);

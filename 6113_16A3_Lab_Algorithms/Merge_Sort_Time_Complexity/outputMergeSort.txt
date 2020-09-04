@@ -1,4 +1,4 @@
-Data = 400000 , Time needed = 0.264000 sec
+Data = 400000 ,Time needed = 0.35
 
 
 	<<< Array after Merge Sort :

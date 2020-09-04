@@ -1,10 +1,11 @@
 /*
   *MD Shahin Mia Robin
   *CSE1901016113
-  *Date : 29-08-20
+  *Date : 04-09-20
   *Merge Sort Time Complexity
   */
 #include<iostream>
+#include<fstream> //to do file operation with c++
 #include<stdio.h>
 #include<time.h>
 #include<stdlib.h>
@@ -79,19 +80,21 @@ int main(int argc, char ** argv){
 
     cout<<"\t\t ++++ Merge Sort Time Complexity Assignment ++++\n";
     cout<<"\t\t **** MD Shahin Mia Robin ****\n ";
-    long amount,i,j,save;
+    long amount,i=0,j,read;
     double finish;
     clock_t start;
 
-    FILE *inputFile, *outputFile; //File operation starts here
+            //File operation starts here
+    ofstream outputFile; //creates output file stream
+    outputFile.open("outputMergeSort.txt",ios::out);
 
-    inputFile = fopen("../inputData.txt","r");
-    outputFile = fopen("outputMergeSort.txt","w");
-    fscanf(inputFile,"%d",&amount);
+    ifstream is("../inputData.txt");//opens file for reading data
+    is>>read;
+    amount = read; //getting 1st data from file
 
-    cout<<"\n\t<<< Reading data from File ..... "<<endl;
-    for (i=0; i<amount; i++){
-        fscanf(inputFile,"%d",&numbers[i]);
+    cout<<"\n\t<<< Reading data from File ..... "<<amount<<endl;
+    while(i<amount && is>>read){
+        numbers[i++] = read;
     }
     cout<<"\t<<< Data reading complete !!!\n";
     cout<<"\t<<< Merge Sort process started,Please Wait...\n";
@@ -105,11 +108,12 @@ int main(int argc, char ** argv){
     cout<<"\t<<< Number of Data : "<<amount<<" ,Time needed for sorting :  "<<finish<<" sec\n";
 
     cout<<"\n\n\t<<< This informations are printed in file named 'outputMergeSort.txt' \n"<<endl;
-	fprintf(outputFile,"Data = %d , Time needed = %lf sec\n",amount,finish);
-	fprintf(outputFile,"\n\n\t<<< Array after Merge Sort :\n");
+    outputFile<<"Data = "<<amount<<" ,Time needed = "<<finish<<endl;
+    outputFile<<"\n\n\t<<< Array after Merge Sort :\n";
 
-    for(long i=0; i<amount; i++){
-        fprintf(outputFile,"%d\n",numbers[i]);
+    for(i=0; i<amount; i++){
+        outputFile<<numbers[i]<<endl; //prints sorted data into the file ...
     }
+
 	return 0;
 }

@@ -76,7 +76,7 @@ int main(int argc, char ** argv){
 
     cout<<"\n\n\t<<< This informations are printed in file named 'outputData.txt' \n"<<endl;
 	fprintf(outputFile,"Data = %d , Time needed = %lf sec\n",amount,finish);
-	fprintf(outputFile,"\n\n\t<<< Sorted Data :\n");
+	fprintf(outputFile,"\n\n\t<<< Sorted Data after Quick Sort:\n");
 
     for(long i=0; i<amount; i++){
         fprintf(outputFile,"%d\n",numbers[i]);

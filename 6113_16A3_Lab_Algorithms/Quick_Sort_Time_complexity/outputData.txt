@@ -1,4 +1,4 @@
-Data = 400000 , Time needed = 0.143000 sec
+Data = 400000 , Time needed = 0.151000 sec
 
 
 	<<< Sorted Data :
